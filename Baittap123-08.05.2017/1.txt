@@ -1,0 +1,66 @@
+package tong2songuyen;
+import java.awt.*;
+import java.awt.Button;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+@SuppressWarnings("unused")
+public class tong2songuyen extends Frame  {
+	Label lblA;
+	Label lblB;
+	Label lblKQ;
+	Button btnOK;
+	TextField txtA;
+	TextField txtB;
+	TextField txtKQ;
+	public tong2songuyen()  {
+		Frame f1 = new Frame ("May tinh cua linh");
+		f1.setSize(500,300);
+		FlowLayout f2 = new FlowLayout();
+		f1.setLayout(null);
+		f1.setLayout(new FlowLayout());
+		
+		
+		lblA = new Label ("Nhap so A: ");
+	
+		f1.add(lblA);
+		txtA = new TextField (20);
+		f1.add(txtA);
+		
+		lblB = new Label ("Nhap so B: ");
+		f1.add(lblB);
+		txtB = new TextField (20);
+		f1.add(txtB);
+		
+		btnOK = new Button ("OK");
+		f1.add(btnOK);
+		btnOK.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent arg0) 
+			{ 
+				Label textA = null;
+				int a=Integer.parseInt(textA.getText());
+				Label textB = null;
+				int b=Integer.parseInt(textB.getText());
+				int KQ=0;
+				KQ=a+b;
+				txtKQ.setText(KQ+ " ");
+			}
+			});
+		lblKQ = new Label ("Ket qua: ");
+		f1.add(lblKQ);
+		txtKQ = new TextField (30);
+		f1.add(txtKQ);	
+		f1.setVisible(true);	
+	}
+
+	public static void main(String[] args) {
+		
+		tong2songuyen t = new tong2songuyen();
+
+	}
+}

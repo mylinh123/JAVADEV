@@ -1,0 +1,155 @@
+
+import java.awt.*;
+
+import java.awt.FlowLayout;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JRadioButton;
+
+public class Ttong_usc_snt_ptich extends Frame {
+
+	TextField txta, txtkq;
+	Label lbl,lbla, lblkq;
+	Button btnth, btntt, btnthoat;
+	JRadioButton tong, uocso, sont, ptich;
+	
+	public Ttong_usc_snt_ptich(){
+		
+		setTitle("My_Linh Bai 3");
+		setSize(450, 300);
+		setLayout(null);
+		lbl = new Label("Tính T?ng - Ý?c s? - S? nguyên T? - Phân tích");
+		lbl.setBounds(90, 30, 300, 20);
+		this.add(lbl);
+		setVisible(true);
+		
+		lbla = new Label("Nh?p N: ");
+		lbla.setBounds(10, 55, 200, 20);
+		add(lbla);
+		
+		lblkq =new Label("K?t qu?: ");
+		lblkq.setBounds(10, 90, 200, 20);
+		add(lblkq);
+		
+		txta= new TextField(20); 
+		add(txta);
+		
+		txtkq= new TextField(20); 
+		add(txtkq);
+		
+		
+		txta.setBounds(100, 55, 100, 20);
+		txtkq.setBounds(100, 90, 100, 20);
+		
+
+		tong = new JRadioButton("T?ng S=1+2+...+n");
+		tong.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		tong.setSize(150, 30);	
+		add(tong);
+		tong.setLocation(270, 45);
+//-----------------------------------------------------
+		
+		uocso = new JRadioButton("Ý?c s? c?a n");
+		uocso.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		uocso.setSize(150, 30);	
+		add(uocso);
+		uocso.setLocation(270, 75);
+		
+//-----------------------------------------------------
+
+		sont = new JRadioButton("S? nguyên t?");
+		sont.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		sont.setSize(150, 30);	
+		add(sont);
+		sont.setLocation(270, 105);
+		
+//-----------------------------------------------------
+
+		ptich = new JRadioButton("Phân tích");
+		ptich.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		ptich.setSize(150, 30);	
+		add(ptich);
+		ptich.setLocation(270, 135);
+
+		
+
+		btnth = new Button("Th?c hi?n");
+		btnth.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				int a = Integer.parseInt(txta.getText());
+				int kq = 0; kq = a;
+				txtkq.setText(String.valueOf(kq));;
+			}
+		});
+		btnth.setSize(100, 30);	
+		add(btnth);
+		btnth.setLocation(30, 180);
+		
+		
+		btntt = new Button("Ti?p t?c");
+		btntt.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				int a = Integer.parseInt(txta.getText());
+				int kq = 0; kq = a;
+				txtkq.setText(String.valueOf(kq));;
+			}
+		});
+		btntt.setSize(100, 30);	
+		add(btntt);
+		btntt.setLocation(160, 180);
+		
+		btnthoat = new Button("Thoát");
+		btnthoat.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
+		btnthoat.setSize(100, 30);	
+		add(btnthoat);
+		btnthoat.setLocation(285, 180);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Ttong_usc_snt_ptich t = new Ttong_usc_snt_ptich();
+	}
+
+}
