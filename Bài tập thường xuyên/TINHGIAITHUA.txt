@@ -1,0 +1,83 @@
+
+import java.util.Scanner;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class TINHGIAITHUA extends JFrame {
+
+	JTextField txta, txtkq;
+	JLabel lbl,lbla, lblb, lblkq;
+	JButton btnkq, btnxoa;
+	
+	public TINHGIAITHUA() {
+		// TODO Auto-generated constructor stub
+		setTitle("Tính giai th?a");
+		setSize(300, 200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		setLayout(null);
+		lbl = new JLabel("Tính giai th?a");
+		lbl.setBounds(100, 10, 300, 20);
+		this.add(lbl);
+		
+		lbla = new JLabel("Nh?p x: ");
+		lbla.setBounds(10, 40, 200, 20);
+		add(lbla);
+		
+		lblkq =new JLabel("K?t qu?: ");
+		lblkq.setBounds(10, 70, 200, 20);
+		add(lblkq);
+		
+		txta= new JTextField(20); 
+		add(txta);
+		
+		txtkq= new JTextField(20); 
+		txtkq.setEditable(false);// khong cho phep nhap du lieu
+		add(txtkq);
+		
+		//v? trí
+		txta.setBounds(110, 40, 150, 20);
+		txtkq.setBounds(110,70, 150, 20);
+		
+		btnkq = new JButton("K?t qu?");
+		btnkq.addActionListener(new ActionListener() {
+			
+			private Scanner sc;
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				int a = Integer.parseInt(txta.getText());
+				int gt=1;	
+				for (int i=1;i<=a;i++)
+					{gt *= i;}
+				txtkq.setText(String.valueOf(gt));;
+			}
+		});
+		btnkq.setSize(100, 30);	
+		add(btnkq);
+		btnkq.setLocation(150, 110);
+		
+		btnxoa = new JButton("Xóa");
+		btnxoa.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				txta.setText("");
+			}});
+		btnxoa.setSize(100, 30);	
+		add(btnxoa);
+		btnxoa.setLocation(40, 110);
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TINHGIAITHUA t = new TINHGIAITHUA();
+	}
+
+}
+
